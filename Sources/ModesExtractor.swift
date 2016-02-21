@@ -30,7 +30,7 @@ protocol ModesExtractor {
 }
 
 struct ConsoleModesExtractor: ModesExtractor {
-    associatedtype ResultType = UInt8
+    typealias ResultType = UInt8
     func extractModeCodes(string: String) -> (codes: [UInt8], text: String) {
         let token = ControlCode.CSI
         var index = string.startIndex.advancedBy(token.characters.count)
@@ -51,7 +51,7 @@ struct ConsoleModesExtractor: ModesExtractor {
 }
 
 struct XcodeColorsModesExtractor: ModesExtractor {
-    associatedtype ResultType = String
+    typealias ResultType = String
     func extractModeCodes(string: String) -> (codes: [String], text: String) {
         let token = ControlCode.CSI
         var index = string.startIndex

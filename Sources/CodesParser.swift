@@ -31,7 +31,7 @@ protocol CodesParser {
 }
 
 struct ConsoleCodesParser: CodesParser {
-    associatedtype SourceType = UInt8
+    typealias SourceType = UInt8
     func parseModeCodes(codes: [UInt8]) -> (color: Color?, backgroundColor: BackgroundColor?, styles: [Style]?) {
         var color: Color? = nil
         var backgroundColor: BackgroundColor? = nil
@@ -55,7 +55,7 @@ struct ConsoleCodesParser: CodesParser {
 }
 
 struct XcodeColorsCodesParser: CodesParser {
-    associatedtype SourceType = String
+    typealias SourceType = String
     func parseModeCodes(codes: [String]) -> (color: Color?, backgroundColor: BackgroundColor?, styles: [Style]?) {
         var color: Color? = nil
         var backgroundColor: BackgroundColor? = nil
